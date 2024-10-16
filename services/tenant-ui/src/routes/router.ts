@@ -22,7 +22,7 @@ router.use(express.json());
 // For the secured innkeepr OIDC login request to verify the token and get a token from Traction
 router.get(
   "/innkeeperLogin",
-  // @ts-expect-error: secure function is not typed correctly
+  // @ts-ignore
   secure(jwksService),
   async (req: any, res: Response, next: NextFunction) => {
     try {
